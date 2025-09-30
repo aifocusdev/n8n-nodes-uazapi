@@ -1,0 +1,61 @@
+{
+  "name": "n8n-nodes-uazapi",
+  "version": "1.0.0",
+  "description": "n8n community node for UazAPI - Complete WhatsApp automation with 90+ endpoints",
+  "keywords": [
+    "n8n-community-node-package",
+    "uazapi",
+    "whatsapp",
+    "automation",
+    "messaging",
+    "chatbot",
+    "ai",
+    "crm"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/aifocusdev/n8n-nodes-uazapi",
+  "author": {
+    "name": "Paulo Henrique",
+    "email": "aifocusdev@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aifocusdev/n8n-nodes-uazapi.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint",
+    "test": "jest"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/UazApiApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/UazApi/UazApi.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.54.4",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

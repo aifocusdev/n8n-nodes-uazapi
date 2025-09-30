@@ -1,0 +1,28 @@
+# Node
+node_modules
+npm-debug.log
+
+# Build
+dist
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea
+.vscode/*
+!.vscode/launch.json
+*.swp
+*.swo
+
+# Test
+coverage
+.nyc_output
+
+# Misc
+*.tsbuildinfo
