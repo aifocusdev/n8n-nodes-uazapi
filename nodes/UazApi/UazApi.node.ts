@@ -1323,7 +1323,12 @@ export class UazApi implements INodeType {
 
 		// Get credentials
 		const credentials = await this.getCredentials('uazApiApi');
-		const baseUrl = credentials.baseUrl as string;
+		let baseUrl = credentials.baseUrl as string;
+
+		// Remove trailing slash if present
+		if (baseUrl.endsWith('/')) {
+			baseUrl = baseUrl.slice(0, -1);
+		}
 
 		for (let i = 0; i < items.length; i++) {
 			try {
@@ -1449,12 +1454,23 @@ export class UazApi implements INodeType {
 						const number = this.getNodeParameter('number', i) as string;
 						const text = this.getNodeParameter('text', i) as string;
 
+						const fullUrl = `${baseUrl}/send/text`;
+
+						// Debug log
+						console.log('UazAPI - Send Text Request:', {
+							baseUrl,
+							fullUrl,
+							number,
+							adminToken: credentials.adminToken ? 'SET' : 'NOT SET',
+							instanceToken: credentials.instanceToken ? 'SET' : 'NOT SET',
+						});
+
 						const response = await this.helpers.httpRequestWithAuthentication.call(
 							this,
 							'uazApiApi',
 							{
 								method: 'POST',
-								url: `${baseUrl}/send/text`,
+								url: fullUrl,
 								body: {
 									number,
 									text,
