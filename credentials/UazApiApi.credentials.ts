@@ -45,11 +45,9 @@ export class UazApiApi implements ICredentialType {
 	authenticate: IAuthenticateGeneric = {
 		type: 'generic',
 		properties: {
-			headers: {
-				'admintoken': '={{$credentials.adminToken}}',
-				'token': '={{$credentials.instanceToken}}',
-				'Content-Type': 'application/json',
-				'Accept': 'application/json',
+			qs: {
+				admintoken: '={{$credentials.adminToken || ""}}',
+				token: '={{$credentials.instanceToken || ""}}',
 			},
 		},
 	};

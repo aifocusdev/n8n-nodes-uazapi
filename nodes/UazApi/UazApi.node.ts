@@ -1321,6 +1321,10 @@ export class UazApi implements INodeType {
 		const resource = this.getNodeParameter('resource', 0) as string;
 		const operation = this.getNodeParameter('operation', 0) as string;
 
+		// Get credentials
+		const credentials = await this.getCredentials('uazApiApi');
+		const baseUrl = credentials.baseUrl as string;
+
 		for (let i = 0; i < items.length; i++) {
 			try {
 				// ============================================
@@ -1335,6 +1339,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/instance/init',
 								body: {
 									name: instanceName,
@@ -1358,6 +1363,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/instance/connect',
 								body,
 							},
@@ -1372,6 +1378,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/instance/status',
 							},
 						);
@@ -1385,6 +1392,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/instance/disconnect',
 							},
 						);
@@ -1398,6 +1406,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'DELETE',
+					baseURL: baseUrl,
 								url: '/instance',
 							},
 						);
@@ -1411,6 +1420,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/instance/all',
 							},
 						);
@@ -1426,6 +1436,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/instance/updateInstanceName',
 								body: {
 									name: newName,
@@ -1450,6 +1461,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/send/text',
 								body: {
 									number,
@@ -1482,6 +1494,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/send/media',
 								body,
 							},
@@ -1500,6 +1513,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/send/contact',
 								body: {
 									number,
@@ -1524,6 +1538,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/send/location',
 								body: {
 									number,
@@ -1548,6 +1563,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/message/react',
 								body: {
 									number,
@@ -1568,6 +1584,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/message/delete',
 								body: {
 									id: messageId,
@@ -1587,6 +1604,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/message/edit',
 								body: {
 									id: messageId,
@@ -1606,6 +1624,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/message/download',
 								body: {
 									id: messageId,
@@ -1624,6 +1643,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/message/markread',
 								body: {
 									id: [messageId],
@@ -1653,6 +1673,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/sender/simple',
 								body: {
 									numbers,
@@ -1676,6 +1697,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/sender/edit',
 								body: {
 									folder_id: folderId,
@@ -1693,6 +1715,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/sender/listfolders',
 							},
 						);
@@ -1708,6 +1731,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/sender/listmessages',
 								body: {
 									folder_id: folderId,
@@ -1726,6 +1750,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/sender/cleardone',
 								body: {
 									hours: 168, // 1 semana
@@ -1752,6 +1777,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/group/create',
 								body: {
 									name: groupName,
@@ -1771,6 +1797,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/group/info',
 								body: {
 									groupjid: groupJid,
@@ -1787,6 +1814,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/group/list',
 							},
 						);
@@ -1806,6 +1834,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/group/updateParticipants',
 								body: {
 									groupjid: groupJid,
@@ -1827,6 +1856,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/group/updateName',
 								body: {
 									groupjid: groupJid,
@@ -1847,6 +1877,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/group/updateDescription',
 								body: {
 									groupjid: groupJid,
@@ -1866,6 +1897,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/group/leave',
 								body: {
 									groupjid: groupJid,
@@ -1884,6 +1916,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: `/group/invitelink/${groupJid}`,
 							},
 						);
@@ -1905,6 +1938,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/archive',
 								body: {
 									number: chatNumber,
@@ -1924,6 +1958,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/delete',
 								body: {
 									number: chatNumber,
@@ -1945,6 +1980,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/read',
 								body: {
 									number: `${chatNumber}@s.whatsapp.net`,
@@ -1965,6 +2001,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/pin',
 								body: {
 									number: chatNumber,
@@ -1985,6 +2022,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/mute',
 								body: {
 									number: `${chatNumber}@s.whatsapp.net`,
@@ -2002,6 +2040,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/find',
 								body: {
 									operator: 'AND',
@@ -2023,6 +2062,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/check',
 								body: {
 									numbers: [chatNumber],
@@ -2044,6 +2084,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/contacts',
 							},
 						);
@@ -2060,6 +2101,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/contact/add',
 								body: {
 									phone: contactPhone,
@@ -2079,6 +2121,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/contact/remove',
 								body: {
 									phone: contactPhone,
@@ -2097,6 +2140,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/chat/details',
 								body: {
 									number: contactPhone,
@@ -2119,6 +2163,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/labels',
 							},
 						);
@@ -2148,6 +2193,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/instance/updatechatbotsettings',
 								body,
 							},
@@ -2167,6 +2213,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'POST',
+					baseURL: baseUrl,
 								url: '/agent/edit',
 								body: {
 									id: '',
@@ -2192,6 +2239,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/agent/list',
 							},
 						);
@@ -2205,6 +2253,7 @@ export class UazApi implements INodeType {
 							'uazApiApi',
 							{
 								method: 'GET',
+					baseURL: baseUrl,
 								url: '/knowledge/list',
 							},
 						);
