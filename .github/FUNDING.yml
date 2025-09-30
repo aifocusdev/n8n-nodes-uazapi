@@ -1,0 +1,6 @@
+# GitHub Sponsors configuration
+# This will show a "Sponsor" button on your repository
+
+# Custom funding links
+custom:
+  - 'https://github.com/aifocusdev/n8n-nodes-uazapi#-apoie-o-projeto'

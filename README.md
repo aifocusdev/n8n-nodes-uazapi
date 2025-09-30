@@ -2,8 +2,18 @@
 
 [![NPM Version](https://img.shields.io/npm/v/n8n-nodes-uazapi)](https://www.npmjs.com/package/n8n-nodes-uazapi)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/npm/dm/n8n-nodes-uazapi)](https://www.npmjs.com/package/n8n-nodes-uazapi)
+[![GitHub Stars](https://img.shields.io/github/stars/aifocusdev/n8n-nodes-uazapi?style=social)](https://github.com/aifocusdev/n8n-nodes-uazapi)
 
 > **Community node for n8n** - Integração completa com UazAPI para automação WhatsApp
+
+<div align="center">
+
+**💝 Projeto Open Source Gratuito** | [⭐ Dê uma Estrela](#) | [💰 Apoie via PIX](#-apoie-o-projeto)
+
+**Desenvolvido com ❤️ por [AI Focus Company](https://github.com/aifocusdev)**
+
+</div>
 
 Este é um node da comunidade n8n que fornece integração completa com a [UazAPI](https://uazapi.com), permitindo automação avançada do WhatsApp Business com mais de 90 endpoints disponíveis.
 
@@ -118,7 +128,7 @@ Para usar este node, você precisa configurar as credenciais da UazAPI:
 
 ### 1. Obter Credenciais
 
-1. Acesse [focus.uazapi.com](https://focus.uazapi.com)
+1. Acesse [seudominio.uazapi.com](https://seudominio.uazapi.com)
 2. Crie uma conta ou faça login
 3. Obtenha seu **Admin Token**
 4. Ao criar uma instância, você receberá um **Instance Token**
@@ -128,7 +138,7 @@ Para usar este node, você precisa configurar as credenciais da UazAPI:
 1. No workflow, clique no node **UazAPI**
 2. Clique em **Create New Credentials**
 3. Preencha os campos:
-   - **Base URL:** `https://focus.uazapi.com` (padrão)
+   - **Base URL:** `https://seudominio.uazapi.com` (padrão)
    - **Admin Token:** Seu token de administrador (para criar/listar instâncias)
    - **Instance Token:** Token da instância específica (opcional - para operações de mensagens)
 
@@ -399,12 +409,47 @@ Encontrou um bug? Por favor, abra uma [issue](https://github.com/seu-usuario/n8n
 - [GitHub Repository](https://github.com/seu-usuario/n8n-nodes-uazapi)
 - [NPM Package](https://www.npmjs.com/package/n8n-nodes-uazapi)
 
-## 💬 Suporte
+## 💬 Suporte e Contato
 
-- **Documentação:** [README.md](README.md)
-- **Issues:** [GitHub Issues](https://github.com/seu-usuario/n8n-nodes-uazapi/issues)
-- **Discussões:** [GitHub Discussions](https://github.com/seu-usuario/n8n-nodes-uazapi/discussions)
-- **Email:** seu@email.com
+### 📧 Contato
+- **Empresa:** AI Focus Company
+- **Desenvolvedor:** Paulo Henrique
+- **Email:** aifocusdev@gmail.com
+- **GitHub:** [@aifocusdev](https://github.com/aifocusdev)
+
+### 🐛 Reportar Problemas
+- **Issues:** [GitHub Issues](https://github.com/aifocusdev/n8n-nodes-uazapi/issues)
+- **Discussões:** [GitHub Discussions](https://github.com/aifocusdev/n8n-nodes-uazapi/discussions)
+
+### 💡 Sugestões e Melhorias
+Abra uma issue ou discussão no GitHub. Todas as contribuições são bem-vindas!
+
+---
+
+## 💰 Apoie o Projeto
+
+Se este projeto foi útil para você ou sua empresa, considere apoiar o desenvolvimento!
+
+### ☕ Contribua via PIX
+
+Sua contribuição ajuda a manter este projeto gratuito e open source!
+
+```
+PIX (Celular): (99) 99229-1983
+Favorecido: Paulo Henrique
+Empresa: AI Focus Company
+```
+
+**Outras formas de apoiar:**
+- ⭐ Dê uma estrela no GitHub
+- 🐛 Reporte bugs e sugira melhorias
+- 📝 Contribua com código
+- 📢 Compartilhe o projeto com outros desenvolvedores
+- 💬 Ajude outros usuários nas discussões
+
+Toda contribuição, por menor que seja, faz diferença! 🙏
+
+---
 
 ## 📜 Licença
 
@@ -415,9 +460,20 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 - Equipe [n8n](https://n8n.io) pela plataforma incrível
 - Equipe [UazAPI](https://uazapi.com) pela API robusta
 - Comunidade open source
+- A todos que contribuíram com doações e feedback
 
 ---
 
-**Desenvolvido com ❤️ para a comunidade n8n**
+<div align="center">
 
-Se este projeto foi útil, considere dar uma ⭐ no GitHub!
+**Desenvolvido com ❤️ por [AI Focus Company](https://github.com/aifocusdev)**
+
+**Paulo Henrique** | aifocusdev@gmail.com
+
+Se este projeto foi útil, considere dar uma ⭐ no GitHub e contribuir via PIX!
+
+[![GitHub Stars](https://img.shields.io/github/stars/aifocusdev/n8n-nodes-uazapi?style=social)](https://github.com/aifocusdev/n8n-nodes-uazapi)
+[![NPM Version](https://img.shields.io/npm/v/n8n-nodes-uazapi)](https://www.npmjs.com/package/n8n-nodes-uazapi)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</div>
